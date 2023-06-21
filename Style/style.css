@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+h2{
+  font-size: 16px;
+}
+#tabContainer {
+  padding: 53px 21px 0px 21px;
+  background: black;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+.tabButton {
+  margin: 0px 24px;
+  padding: 3px 35px;
+  color: white;
+  background: none;
+  border: none;
+  font-size: 21px;
+  font-weight: 700;
+}
+.card {
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+}
+.card-image {
+  max-width: 100%;
+  width: 275px;
+  height: 150px;
+}
+
+.display {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: flex-start;
+}
+.hide {
+  display: none;
+}
+.active{
+  background: white;
+  color: black;
+}
