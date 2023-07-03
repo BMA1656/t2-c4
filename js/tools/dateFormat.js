@@ -8,7 +8,15 @@ export function dateformat(i) {
     const date = baseDate.getDate();
     const hour = baseDate.getHours();
     const minutes = baseDate.getMinutes();
-    
+
     const formattedDate = `${dayOfWeek}, ${month} ${date}, ${hour}:${minutes}`;
     return formattedDate
+}
+
+export function Price(value) {
+    if (value == 0) {
+        return "free"
+    } else {
+        return (`$${value}`)
+    }
 }

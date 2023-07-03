@@ -1,7 +1,10 @@
-import {dateformat} from "../tools/dateFormat.js"
+import {
+  Price,
+  dateformat
+} from "../tools/dateFormat.js"
 
 
-class pageConstructor {
+export class PageConstructor {
   constructor(id, title, image, date, location, price) {
     this.id = id;
     this.title = title;
@@ -11,33 +14,51 @@ class pageConstructor {
     this.price = price;
   }
 
-  generateCard() {
-    const Price = () => {
-      if (this.price == 0) {
-        return "free"
-      } else {
-        return (`$${this.price}`)
-      }
-    }
-  
+   generateCard() {
     return `
         <li class="card">
-          <img src="${this.image}" alt="${this.title}" class="card-image">
+          <img src="${this.image}" alt="${this.title}" class="card-image" >
+          <div  class="corazon-svg">
+          <img src="utilities/heart-dislike.svg" class="heart unliked" id="${this.id}" >
+          </div>
           <div class="card-content">
             <h2 class="card-title">${this.title}</h2>
             <p class="card-date">${dateformat(this.date)}</p>
             <p class="card-location">${this.location.address} • ${this.location.city}, ${this.location.state}</p>
-            <p class="card-price">${Price()}</p>
-          </div>
+            <p class="card-price">${Price(this.price)}</p>
+            <div id="bt${this.id}">
+            <button class="intButton" value="${this.id}">Interested</button>
+            <button class="goButton" value="${this.id}">Going!</button>
+            </div>
+            </div>            
         </li>
       `;
   }
+  profileCard(value) {
+    return `
+      <li class="card card${this.id}" id="${this.id}">
+        <img src="${this.image}" alt="${this.title}" class="card-image" >
+        
+        <div class="card-content">
+          <h2 class="card-title">${this.title}</h2>
+          <p class="card-date">${dateformat(this.date)}</p>
+          <p class="card-location">${this.location.address} • ${this.location.city}, ${this.location.state}</p>
+          <p class="card-price">${Price(this.price)}</p>
+          <div class="${this.id}">
+            <button class="${value}" value="${this.id}">not going anymore? remove</button>
+          </div>
+        </div>            
+      </li>
+    `;
+  }
+
+
 }
 
 export function dataConstructor(value) {
   const eventStorage = JSON.parse(localStorage.getItem(`${value}`)) || [];
   const events = eventStorage.map(eventData => {
-    return new pageConstructor(
+    return new PageConstructor(
       eventData.id,
       eventData.title,
       eventData.image,

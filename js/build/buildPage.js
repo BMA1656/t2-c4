@@ -16,15 +16,3 @@ export function createValueforCahe(id) {
         buildcacheObject(value)
     }
 }
-
-export function createTabs() {
-    const buttons = ["Music", "Sports", "Food", "Business", "Art"];
-    const container = document.getElementById("tabContainer");
-    const vl = buttons[0].toLowerCase()
-    for (let i = 0; i < buttons.length; i++) {
-        const value = buttons[i].toLowerCase();
-        container.innerHTML += `
-        <button class="tabButton"  id="button${value}" value="${value}">${buttons[i]}</button>`;
-    }
-    createValueforCahe(vl);
-}
