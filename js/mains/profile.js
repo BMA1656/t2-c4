@@ -40,21 +40,16 @@ removeObject.addEventListener("click", async (event) => {
 
 
 window.addEventListener("load", async () => {
-  await createTabs(["Interested", "Going", "Favorite"]);
+  await createTabs(["Calendar", "Interested", "Going", "Favorite"]);
   changeCardList("favorite");
   CardContructor("favorite")
 });
 
 
 
-
-
-
-
 const cardsContainer = document.getElementById("cardsContainer");
 cardsContainer.addEventListener("click", (event) => {
   const target = event.target;
-
   if (target.matches(".intButton")) {
     const buttonValue = target.getAttribute("value");
     console.log("ID del botón:", buttonValue);

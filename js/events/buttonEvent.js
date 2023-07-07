@@ -13,12 +13,11 @@ export function changeCardList(card) {
         cardContent.classList.add("hide");
         cardContent.classList.remove("display");
     });
-
+    const selectedTabContent = document.getElementById(buttonContent);
+    selectedTabContent.classList.add("active");
 
     const selectedcardContent = document.getElementById(cardContent);
     selectedcardContent.classList.remove("hide");
     selectedcardContent.classList.add("display");
 
-    const selectedTabContent = document.getElementById(buttonContent);
-    selectedTabContent.classList.add("active");
 }

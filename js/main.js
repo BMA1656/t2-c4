@@ -41,7 +41,7 @@ intButtonEvent.addEventListener("click", (event) => {
         let button = event.target;
         let buttonValue = button.getAttribute('value');
         console.log("ID del botón:", buttonValue);
-        addList("interested")
+        addList(buttonValue,"interested")
     }
 });
 
@@ -61,7 +61,7 @@ heart.addEventListener("click", (event) => {
         let heartElement = event.target.closest(".heart");
         let heartvalue = heartElement.id;
         changeHeartLink(heartElement);
-        addList(heartvalue, "favorite")
-    
+        console.log("ID del botón:", heartvalue);
+        addList(heartvalue, "favorite");
     }
 });

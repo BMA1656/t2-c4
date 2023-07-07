@@ -3,9 +3,9 @@ export function importLocal(valor) {
         var clave = localStorage.key(i);
         var objetoAlmacenado = JSON.parse(localStorage.getItem(clave));
 
-        for (let i = 0; i < objetoAlmacenado.length; i++) {
-            if (objetoAlmacenado[i].id === valor) {
-                return objetoAlmacenado[i];
+        for (let j = 0; j < objetoAlmacenado.length; j++) {
+            if (objetoAlmacenado[j].id === valor) {
+                return objetoAlmacenado[j];
             }
         }
     }

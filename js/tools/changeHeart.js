@@ -1,7 +1,7 @@
 export function changeHeartLink(heartElement) {
     const isLiked = heartElement.classList.contains("liked");
     const currentLink = heartElement.src;
-    const likedSrc = "utilities/heart-regular.svg";
+    const likedSrc = "utilities/heart-like.svg";
     const unlikedSrc = "utilities/heart-dislike.svg";
 
     if (isLiked) {
