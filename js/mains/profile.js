@@ -6,21 +6,32 @@ import {
 } from "../events/buttonEvent.js";
 import {
   removeCardFromContainer,
-  eraseObject
+  eraseObject,
 } from "../events/erase.js";
 import {
   CardContructor
-} from "../InterestedActivities/cardsBuilder.js"
+} from "../InterestedActivities/cardsBuilder.js";
+import {
+  createCalendar,showPreviousMonth,showNextMonth
+} from "../calendar/createCalendar.js";
+
 
 const tabButtons = document.getElementById("tabContainer");
 tabButtons.addEventListener("click", (event) => {
   if (event.target.matches(".tabButton")) {
     const object = event.target;
     const objectValue = object.value;
-    changeCardList(objectValue)
-    CardContructor(objectValue)
+    if (objectValue === "calendar") {
+      changeCardList(objectValue);
+      
+      createCalendar()
+    } else {
+      changeCardList(objectValue);
+      CardContructor(objectValue);
+    }
   }
 });
+
 
 
 const removeObject = document.getElementById("cardsContainer");
@@ -38,18 +49,16 @@ removeObject.addEventListener("click", async (event) => {
 });
 
 
-
 window.addEventListener("load", async () => {
   await createTabs(["Calendar", "Interested", "Going", "Favorite"]);
   changeCardList("favorite");
   CardContructor("favorite")
 });
 
-
-
 const cardsContainer = document.getElementById("cardsContainer");
 cardsContainer.addEventListener("click", (event) => {
   const target = event.target;
+
   if (target.matches(".intButton")) {
     const buttonValue = target.getAttribute("value");
     console.log("ID del botón:", buttonValue);
@@ -64,4 +73,20 @@ cardsContainer.addEventListener("click", (event) => {
     changeHeartLink(heartElement);
     addList(heartValue, "favorite");
   }
+});
+
+const calendarContainer = document.getElementById("cardsContainer");
+calendarContainer.addEventListener("click", (event) => {
+  const target = event.target;
+
+  if (target.matches("#btn-next")) {
+   
+    showNextMonth()
+   
+  } 
+ else if (target.matches("#btn-prev")) {
+   
+  showPreviousMonth()
+   
+  } 
 });

@@ -5,6 +5,10 @@ export class Singleton {
             this.interested = getLocalStorageValue("interested");
             this.going = getLocalStorageValue("going");
             Singleton.instance = this;
+        } else {
+            Singleton.instance.favorite = getLocalStorageValue("favorite");
+            Singleton.instance.interested = getLocalStorageValue("interested");
+            Singleton.instance.going = getLocalStorageValue("going");
         }
         return Singleton.instance;
     }   
@@ -18,7 +22,6 @@ export class Singleton {
         return this.going;
     }
 }
-
 function getLocalStorageValue(key) {
     const storedValue = localStorage.getItem(key);
     if (storedValue) {

@@ -51,7 +51,8 @@ h2 {
 .card-image {
   max-width: 100%;
   width: 275px;
-  height: 150px;
+ height: 150px;
+ box-shadow: -2px 4px 27px 0px rgba(0,0,0,0.75);
 }
 
 .display {
@@ -59,7 +60,7 @@ h2 {
   flex-direction: row;
   flex-wrap: wrap;
   align-content: center;
-  justify-content: flex-start;
+  justify-content: center;
 }
 .hide {
   display: none;
@@ -91,4 +92,103 @@ h2 {
   text-decoration: underline blue;
 }
 
+.calendar-header {
+  display: flex;
+  margin-bottom: 10px;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.calendar-grid {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.calendar-grid th,
+.calendar-grid td {
+  padding: 10px;
+  text-align: center;
+  width: 120px;
+  height: 70px;
+}
+
+.calendar-grid th {
+  background-color: #f0f0f0;
+}
+
+.calendar-grid td {
+  border: 1px solid #ccc;
+}
+
+.event-info {
+  padding: 5px;
+  text-align: center;
+}
+
+.event-info h3 {
+  margin: 5px 0;
+}
+
+.event-info img {
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+}
+
+.event-details {
+  padding: 5px;
+}
+
+.event-favorite {
+  background-color: pink;
+  color: white;
+}
+
+.event-interested {
+  background-color: yellow;
+  color: black;
+}
+
+.event-going {
+  background-color: green;
+  color: white;
+}
+
+.card-details {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.card-details h2 {
+  color: black;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.card-details p {
+  color: black;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.eventCard {
+  background-color: white;
+  width: 285px;
+  height: auto;
+  border: solid black;
+  padding: 11px;
+}
+
+.textOnCalendar {
+  font-size: 10px;
+}
