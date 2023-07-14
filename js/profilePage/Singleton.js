@@ -1,16 +1,16 @@
-export class Singleton {
+export class State {
     constructor() {
-        if (!Singleton.instance) {
+        if (!State.instance) {
             this.favorite = getLocalStorageValue("favorite");
             this.interested = getLocalStorageValue("interested");
             this.going = getLocalStorageValue("going");
-            Singleton.instance = this;
+            State.instance = this;
         } else {
-            Singleton.instance.favorite = getLocalStorageValue("favorite");
-            Singleton.instance.interested = getLocalStorageValue("interested");
-            Singleton.instance.going = getLocalStorageValue("going");
+            State.instance.favorite = getLocalStorageValue("favorite");
+            State.instance.interested = getLocalStorageValue("interested");
+            State.instance.going = getLocalStorageValue("going");
         }
-        return Singleton.instance;
+        return State.instance;
     }   
     getFavorite() {
         return this.favorite;

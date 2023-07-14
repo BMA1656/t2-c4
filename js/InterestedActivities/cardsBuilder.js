@@ -1,6 +1,6 @@
 import {
-  Singleton
-} from "../profilePage.js/Singleton.js";
+  State
+} from "../profilePage.js/State.js";
 
 import {
   PageConstructor
@@ -8,7 +8,7 @@ import {
   
   
 export function CardContructor(value) {
-  const builder = new Singleton();
+  const builder = new State();
 
   let events;
   switch (value) {

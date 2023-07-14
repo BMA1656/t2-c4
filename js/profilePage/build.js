@@ -1,13 +1,13 @@
 import { ProfileCardConstructor } from "../InterestedActivities/cardsBuilder.js";
 import {
-    Singleton
-} from "./Singleton.js";
+    State
+} from "./State.js";
 
 
 
 
 export function dataConstructor(value) {
-    const builder = new Singleton();
+    const builder = new State();
 
     let events;
     switch (value) {
