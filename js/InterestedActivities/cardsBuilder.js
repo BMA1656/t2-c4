@@ -1,6 +1,6 @@
 import {
   State
-} from "../profilePage.js/State.js";
+} from "../profilePage/State.js";
 
 import {
   PageConstructor
