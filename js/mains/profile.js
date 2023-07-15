@@ -14,7 +14,11 @@ import {
 import {
   createCalendar,showPreviousMonth,showNextMonth
 } from "../calendar/createCalendar.js";
+import { State } from "../profilePage/State.js";
 
+const state = new State();
+const currentState = state.getState();
+console.log(currentState);
 
 const tabButtons = document.getElementById("tabContainer");
 tabButtons.addEventListener("click", (event) => {

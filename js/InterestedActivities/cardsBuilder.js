@@ -6,20 +6,19 @@ import {
   PageConstructor
 } from "../constructor/construtor.js"
   
-  
 export function CardContructor(value) {
-  const builder = new State();
+  const state = new State().getState();
 
   let events;
   switch (value) {
     case "favorite":
-      events = [builder.getFavorite()];
+      events = [state.favorites];
       break;
     case "interested":
-      events = [builder.getInterested()];
+      events = [state.interested];
       break;
     case "going":
-      events = [builder.getGoing()];
+      events = [state.going];
       break;
     default:
       events = [];
@@ -37,6 +36,7 @@ export function CardContructor(value) {
     });
   }
 }
+
 
 function Constructor(event, value) {
   const card = new PageConstructor(
