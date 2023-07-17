@@ -12,13 +12,10 @@ import {
   CardContructor
 } from "../InterestedActivities/cardsBuilder.js";
 import {
-  createCalendar,showPreviousMonth,showNextMonth
+  createCalendar,
+  showPreviousMonth,
+  showNextMonth
 } from "../calendar/createCalendar.js";
-import { State } from "../profilePage/State.js";
-
-const state = new State();
-const currentState = state.getState();
-console.log(currentState);
 
 const tabButtons = document.getElementById("tabContainer");
 tabButtons.addEventListener("click", (event) => {
@@ -27,7 +24,6 @@ tabButtons.addEventListener("click", (event) => {
     const objectValue = object.value;
     if (objectValue === "calendar") {
       changeCardList(objectValue);
-      
       createCalendar()
     } else {
       changeCardList(objectValue);
@@ -38,15 +34,14 @@ tabButtons.addEventListener("click", (event) => {
 
 
 
-const removeObject = document.getElementById("cardsContainer");
-removeObject.addEventListener("click", async (event) => {
+const cardsContainer = document.getElementById("cardsContainer");
+cardsContainer.addEventListener("click", async (event) => {
   const targetClass = event.target.classList;
 
   if (targetClass.contains("favorite") || targetClass.contains("going") || targetClass.contains("interested")) {
     const button = event.target;
     const buttonValue = button.getAttribute('value');
     const buttonClass = button.getAttribute('class');
-    console.log("ID del botón:", buttonValue, buttonClass);
     await eraseObject(buttonValue, buttonClass);
     removeCardFromContainer(buttonClass, buttonValue);
   }
@@ -56,41 +51,18 @@ removeObject.addEventListener("click", async (event) => {
 window.addEventListener("load", async () => {
   await createTabs(["Calendar", "Interested", "Going", "Favorite"]);
   changeCardList("favorite");
-  CardContructor("favorite")
+  CardContructor("favorite");
+
 });
 
-const cardsContainer = document.getElementById("cardsContainer");
-cardsContainer.addEventListener("click", (event) => {
-  const target = event.target;
-
-  if (target.matches(".intButton")) {
-    const buttonValue = target.getAttribute("value");
-    console.log("ID del botón:", buttonValue);
-    addList(buttonValue, "interested");
-  } else if (target.matches(".goButton")) {
-    const buttonValue = target.getAttribute("value");
-    console.log("ID del botón:", buttonValue);
-    addList(buttonValue, "going");
-  } else if (target.matches(".heart")) {
-    const heartElement = target.closest(".heart");
-    const heartValue = heartElement.id;
-    changeHeartLink(heartElement);
-    addList(heartValue, "favorite");
-  }
-});
 
 const calendarContainer = document.getElementById("cardsContainer");
 calendarContainer.addEventListener("click", (event) => {
   const target = event.target;
 
   if (target.matches("#btn-next")) {
-   
     showNextMonth()
-   
-  } 
- else if (target.matches("#btn-prev")) {
-   
-  showPreviousMonth()
-   
-  } 
+  } else if (target.matches("#btn-prev")) {
+    showPreviousMonth()
+  }
 });

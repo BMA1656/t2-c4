@@ -1,8 +1,5 @@
 import { ProfileCardConstructor } from "../InterestedActivities/cardsBuilder.js";
-import {
-    State
-} from "./State.js";
-
+import { State } from "./State.js";
 
 
 
@@ -30,12 +27,13 @@ export function dataConstructor(value) {
         container.innerHTML = "";
         events.forEach(subArray => {
             subArray.forEach(event => {
-                console.log(event);
                 Constructor(event, value);
             });
         });
     }
 }
+
+
 
 function Constructor(event, value) {
     const card = new ProfileCardConstructor (

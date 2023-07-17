@@ -1,6 +1,5 @@
 export function changeHeartLink(heartElement) {
     const isLiked = heartElement.classList.contains("liked");
-    const currentLink = heartElement.src;
     const likedSrc = "utilities/heart-like.svg";
     const unlikedSrc = "utilities/heart-dislike.svg";
 
@@ -13,5 +12,4 @@ export function changeHeartLink(heartElement) {
         heartElement.classList.remove("unliked");
         heartElement.classList.add("liked");
     }
-    // console.log(currentLink);
 }

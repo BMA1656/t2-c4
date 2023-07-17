@@ -1,7 +1,7 @@
 export function changeCardList(card) {
     const cardContent = card + "Card";
     const buttonContent = "button" + card;
-    console.log(cardContent)
+
 
     const cardContainer = document.querySelectorAll("#cardsContainer ol");
     const buttonContainer = document.querySelectorAll("#tabContainer button");

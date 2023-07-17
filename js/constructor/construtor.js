@@ -71,5 +71,4 @@ export function dataConstructor(value) {
   const cardsHtml = events.map(event => event.generateCard()).join('');
   const container = document.getElementById(`${value}Card`);
   container.innerHTML = cardsHtml;
-  console.log(events);
 }

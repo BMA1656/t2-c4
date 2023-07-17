@@ -27,7 +27,6 @@ export function addList(value, category) {
     }
 
     localStorage.setItem(category, JSON.stringify(list));
-    console.log(localStorage.getItem(category));
 }
 
 
@@ -45,8 +44,7 @@ function changes(base, category, value, id) {
   
     if (base === "base") {
       switch (category) {
-        case "going":
-          console.log(category);
+        case "going":          
           container.innerHTML = basebutton;
           break;
         case "interested":
@@ -60,8 +58,6 @@ function changes(base, category, value, id) {
     if (base === 1) {
       switch (category) {
         case "going":
-          console.log(category);
-          console.log(going);
           container.innerHTML = going;
           break;
         case "interested":

@@ -1,6 +1,4 @@
-import {
-    eventApi
-} from "./api.js";
+import {eventApi} from "./api.js"
 import {dataConstructor} from "../constructor/construtor.js"
 
 function cache(apiData,prop) {
@@ -16,7 +14,7 @@ function cache(apiData,prop) {
     });
     Object.assign(cacheProxy, apiData);
     dataConstructor(prop)
-};
+}
 
 
 

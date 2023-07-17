@@ -20,7 +20,6 @@ tabButtons.addEventListener("click", (event) => {
     if (event.target.matches(".tabButton")) {
         const object = event.target;
         const objectValue = object.value;
-        console.log(objectValue);
         createValueforCahe(objectValue);
         changeCardList(objectValue)
     }
@@ -40,7 +39,6 @@ intButtonEvent.addEventListener("click", (event) => {
     if (event.target.matches(".intButton")) {
         let button = event.target;
         let buttonValue = button.getAttribute('value');
-        console.log("ID del botón:", buttonValue);
         addList(buttonValue,"interested")
     }
 });
@@ -50,7 +48,6 @@ goButtonEvent.addEventListener("click", (event) => {
     if (event.target.matches(".goButton")) {
         let button = event.target;
         let buttonValue = button.getAttribute('value');
-        console.log("ID del botón:", buttonValue);
         addList(buttonValue, "going")
     }
 });
@@ -61,7 +58,6 @@ heart.addEventListener("click", (event) => {
         let heartElement = event.target.closest(".heart");
         let heartvalue = heartElement.id;
         changeHeartLink(heartElement);
-        console.log("ID del botón:", heartvalue);
         addList(heartvalue, "favorite");
     }
 });

@@ -12,7 +12,7 @@ export function CardContructor(value) {
   let events;
   switch (value) {
     case "favorite":
-      events = [state.favorites];
+      events = [state.favorite];
       break;
     case "interested":
       events = [state.interested];
@@ -30,7 +30,6 @@ export function CardContructor(value) {
     container.innerHTML = "";
     events.forEach(subArray => {
       subArray.forEach(event => {
-        console.log(event);
         Constructor(event, value);
       });
     });

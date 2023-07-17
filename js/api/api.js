@@ -8,7 +8,7 @@ export const eventApi = async (i) => {
         const data = await result.json();
         return data
     } catch (error) {
-        console.error(error);
+        error(error);
     }
 }
 
