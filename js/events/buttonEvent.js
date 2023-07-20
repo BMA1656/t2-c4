@@ -19,5 +19,6 @@ export function changeCardList(card) {
     const selectedcardContent = document.getElementById(cardContent);
     selectedcardContent.classList.remove("hide");
     selectedcardContent.classList.add("display");
+    
 
 }

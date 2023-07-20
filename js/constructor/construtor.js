@@ -16,7 +16,7 @@ export class PageConstructor {
 
    generateCard() {
     return `
-        <li class="card">
+        <li class="card" id="card${this.id}">
           <img src="${this.image}" alt="${this.title}" class="card-image" >
           <div  class="corazon-svg">
           <img src="utilities/heart-dislike.svg" class="heart unliked" id="${this.id}" >

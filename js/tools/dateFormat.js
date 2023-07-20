@@ -6,11 +6,13 @@ export function dateformat(i) {
     const month = months[baseDate.getMonth()];
 
     const date = baseDate.getDate();
+    const year = baseDate.getFullYear(); 
+
     const hour = baseDate.getHours();
     const minutes = baseDate.getMinutes();
 
-    const formattedDate = `${dayOfWeek}, ${month} ${date}, ${hour}:${minutes}`;
-    return formattedDate
+    const formattedDate = `${dayOfWeek}, ${month} ${date}, ${year}, ${hour}:${minutes}`;
+    return formattedDate;
 }
 
 export function Price(value) {

@@ -13,6 +13,7 @@ import {
 import {
     changeHeartLink
 } from "./tools/changeHeart.js";
+import { verifylikedstate } from "./tools/verifyIFLiked.js";
 
 
 const tabButtons = document.getElementById("tabContainer");
@@ -22,13 +23,16 @@ tabButtons.addEventListener("click", (event) => {
         const objectValue = object.value;
         createValueforCahe(objectValue);
         changeCardList(objectValue)
+        verifylikedstate(objectValue)
     }
+    
 });
 
 window.addEventListener("load", async () => {
     await createTabs(["Music", "Sports", "Food", "Business", "Art"]);
     createValueforCahe("music");
     changeCardList("music")
+    verifylikedstate("music")
 });
 
 
