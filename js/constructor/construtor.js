@@ -1,8 +1,7 @@
 import {
   Price,
-  dateformat
-} from "../tools/dateFormat.js"
-
+  dateformat,
+} from '../tools/dateFormat.js';
 
 export class PageConstructor {
   constructor(id, title, image, date, location, price) {
@@ -14,7 +13,7 @@ export class PageConstructor {
     this.price = price;
   }
 
-   generateCard() {
+  generateCard() {
     return `
         <li class="card" id="card${this.id}">
           <img src="${this.image}" alt="${this.title}" class="card-image" >
@@ -26,14 +25,17 @@ export class PageConstructor {
             <p class="card-date">${dateformat(this.date)}</p>
             <p class="card-location">${this.location.address} • ${this.location.city}, ${this.location.state}</p>
             <p class="card-price">${Price(this.price)}</p>
-            <div id="bt${this.id}">
+          </div>
+          <div class="cardEnd" id="cardBt${this.id}">
+          <div class="btBox" id="bt${this.id}">
             <button class="intButton" value="${this.id}">Interested</button>
             <button class="goButton" value="${this.id}">Going!</button>
-            </div>
-            </div>            
+          </div>
+          </div>
         </li>
       `;
   }
+
   profileCard(value) {
     return `
       <li class="card card${this.id}" id="${this.id}">
@@ -51,24 +53,20 @@ export class PageConstructor {
       </li>
     `;
   }
-
-
 }
 
 export function dataConstructor(value) {
   const eventStorage = JSON.parse(localStorage.getItem(`${value}`)) || [];
-  const events = eventStorage.map(eventData => {
-    return new PageConstructor(
-      eventData.id,
-      eventData.title,
-      eventData.image,
-      eventData.date,
-      eventData.location,
-      eventData.price
-    );
-  });
+  const events = eventStorage.map((eventData) => new PageConstructor(
+    eventData.id,
+    eventData.title,
+    eventData.image,
+    eventData.date,
+    eventData.location,
+    eventData.price,
+  ));
 
-  const cardsHtml = events.map(event => event.generateCard()).join('');
+  const cardsHtml = events.map((event) => event.generateCard()).join('');
   const container = document.getElementById(`${value}Card`);
   container.innerHTML = cardsHtml;
 }

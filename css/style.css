@@ -4,8 +4,9 @@ body {
 li {
   list-style: none;
 }
-h2 {
-  font-size: 16px;
+.card-title {
+  font-size: 19px;
+  font-weight: bold;
 }
 #tabContainer {
   width: 100%;
@@ -26,7 +27,7 @@ h2 {
   top: 2%;
   text-decoration: none;
 }
-.revert{
+.revert {
   left: 4%;
 }
 .tabButton {
@@ -39,22 +40,59 @@ h2 {
   font-weight: 700;
 }
 .card {
-  width: 300px;
+  width: 400px;
   display: flex;
+  height: auto;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 16px;
   margin: 10px;
   box-shadow: 0px 0px 23px -4px rgba(0, 0, 0, 0.77);
 }
 .card-image {
+  margin-top: 12px;
   max-width: 100%;
-  width: 275px;
- height: 150px;
- box-shadow: -2px 4px 27px 0px rgba(0,0,0,0.75);
+  width: 300px;
+  height: 166px;
+  box-shadow: -2px 4px 27px 0px rgba(0, 0, 0, 0.75);
 }
+.card-content {
+  width: 305px;
+}
+.card-price,
+.card-location {
+  color: rgb(96, 94, 94);
+}
+.btBox {
+  display: flex;
+  justify-content: center;
+}
+.btBox p {
+  width: 190px;
+  height: 73px;
+  margin-bottom: -39px;
+}
+.bt2{ flex-direction: column;}
 
+.intButton {
+  border: solid #3acfcf;
+  border-radius: 7px;
+  background-color: white;
+  color: #3acfcf;
+  font-size: 28px;
+  margin: 16px;
+  height: 45px;
+}
+.goButton {
+  border: solid #3acfcf;
+  border-radius: 7px;
+  background-color: #3acfcf;
+  color: white;
+  font-size: 28px;
+  margin: 16px;
+  height: 45px;
+}
 .display {
   display: flex;
   flex-direction: row;
@@ -91,7 +129,6 @@ h2 {
   color: blue;
   text-decoration: underline blue;
 }
-
 
 .event-info {
   padding: 5px;
@@ -145,7 +182,7 @@ h2 {
   font-size: 24px;
   margin-bottom: 10px;
 }
-.card-date{
+.card-date {
   color: rgb(184, 124, 14);
 }
 
@@ -167,7 +204,6 @@ h2 {
   font-size: 10px;
 }
 
-
 .calendar-header {
   display: flex;
   margin-bottom: 10px;
@@ -175,7 +211,7 @@ h2 {
   justify-content: center;
   align-items: center;
 }
-.calendar-header button{
+.calendar-header button {
   margin: 10px;
   font-size: 35px;
   font-weight: 700;
@@ -185,7 +221,7 @@ h2 {
   background-color: white;
   height: 51px;
 }
-.calendar-header h2{
+.calendar-header h2 {
   font-size: 50px;
 }
 
