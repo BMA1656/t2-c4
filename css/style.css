@@ -93,6 +93,13 @@ li {
   margin: 16px;
   height: 45px;
 }
+
+.remove{
+  color: #3acfcf;
+  font-size: 24px;
+  border: solid #3acfcf;
+  background-color: transparent;
+}
 .display {
   display: flex;
   flex-direction: row;

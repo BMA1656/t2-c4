@@ -47,7 +47,7 @@ export class PageConstructor {
           <p class="card-location">${this.location.address} • ${this.location.city}, ${this.location.state}</p>
           <p class="card-price">${Price(this.price)}</p>
           <div class="${this.id}">
-            <button class="${value}" value="${this.id}">not going anymore? remove</button>
+            <button class="${value} remove" value="${this.id}">Not going anymore? REMOVE</button>
           </div>
         </div>            
       </li>
